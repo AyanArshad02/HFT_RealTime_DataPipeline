@@ -1,0 +1,5 @@
+yfinance
+pandas
+psycopg2
+mlflow
+zenml
