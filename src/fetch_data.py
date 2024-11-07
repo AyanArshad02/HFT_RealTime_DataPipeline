@@ -172,4 +172,4 @@ if __name__ == "__main__":
     stock_data = stock_data_fetcher.fetch_data()
     
     # Display the fetched data (for testing purposes, you can adjust this as needed)
-    print(stock_data.tail())  # Print the first few rows of the stock data
+    print(stock_data.tail())  # Print the last few rows of the stock data
