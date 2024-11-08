@@ -148,7 +148,7 @@ class StockDataFetcher:
             If there is a record of previous data in the database, it will fetch data starting from the day after the last processed date.
             Otherwise, it fetches the entire available stock data.
         """
-        
+
         last_date = self.get_last_date_from_db()
         if last_date:
             start_date = last_date + timedelta(days=1)
@@ -171,5 +171,5 @@ if __name__ == "__main__":
     # Fetching the stock data
     stock_data = stock_data_fetcher.fetch_data()
     
-    # Display the fetched data (for testing purposes, you can adjust this as needed)
-    print(stock_data.tail())  # Print the last few rows of the stock data
+    # Display the fetched data
+    print(stock_data.tail())

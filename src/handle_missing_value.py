@@ -54,8 +54,8 @@ class MissingValueHandler:
         
         # Check if any missing values are present in the DataFrame
         if stock_data.isnull().values.any():
-            # Forward fill to propagate last valid observation
-            stock_data = stock_data.fillna(method='ffill')
+            # Forward fill then Backward fill
+            stock_data = stock_data.fillna(method='ffill').fillna(method='bfill')
             
             # Drop rows where NaNs still exist after forward filling
             stock_data = stock_data.dropna()
@@ -68,7 +68,7 @@ if __name__ == "__main__":
     data_ingestor = DataIngestor()
     
     # Example ticker symbol for testing
-    ticker_symbol = "AAPL"  # Replace with any valid ticker symbol for testing
+    ticker_symbol = "AAPL"
     
     # Ingest data for the given ticker symbol and print the result
     stock_data = data_ingestor.ingest_data(ticker_symbol)

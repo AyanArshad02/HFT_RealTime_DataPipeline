@@ -38,20 +38,19 @@ class DataIngestor:
         # Fetch the stock data using the fetcher instance
         stock_data = fetcher.fetch_data()
         
-        # Return the fetched stock data
         return stock_data
 
-# Test the DataIngestor class if this script is run directly
 if __name__ == "__main__":
-    # Create an instance of DataIngestor
+    # Creating an instance of DataIngestor
     data_ingestor = DataIngestor()
     
     # Example ticker symbol for testing
-    ticker_symbol = "AAPL"  # Replace with any valid ticker symbol for testing
+    ticker_symbol = "AAPL"
     
     # Ingest data for the given ticker symbol and print the result
     stock_data = data_ingestor.ingest_data(ticker_symbol)
+    
     print(f"Stock data for {ticker_symbol}:")
-    print(stock_data.tail()) # printing last 5 rows of stock_data
+    print(stock_data.tail())
 
 
