@@ -1,5 +1,6 @@
 from fetch_data import StockDataFetcher
 import pandas as pd
+from utils.logger import logger
 
 class DataIngestor:
     """
@@ -32,12 +33,15 @@ class DataIngestor:
         Returns:
             DataFrame: A pandas DataFrame containing the stock data retrieved by the fetcher.
         """
+        logger.info("Started Data Ingestion")
+        
         # Create a fetcher for the given ticker symbol
         fetcher = self.create_fetcher(ticker_symbol)
         
         # Fetch the stock data using the fetcher instance
         stock_data = fetcher.fetch_data()
         
+        logger.info("Data Ingestion Completed Successfully")
         return stock_data
 
 if __name__ == "__main__":
@@ -49,7 +53,7 @@ if __name__ == "__main__":
     
     # Ingest data for the given ticker symbol and print the result
     stock_data = data_ingestor.ingest_data(ticker_symbol)
-    
+
     print(f"Stock data for {ticker_symbol}:")
     print(stock_data.tail())
 
