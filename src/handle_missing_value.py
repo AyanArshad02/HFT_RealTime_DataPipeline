@@ -1,5 +1,6 @@
 from ingest_data import DataIngestor
 import pandas as pd
+from utils.logger import logger
 
 """
 Here I am using Template Design Patter for handling Missing values.
@@ -33,6 +34,7 @@ class MissingValueHandler:
         DataFrame
             The DataFrame with missing values handled.
         """
+        logger.info("Started Handling Missing Valuess")
         return self._handle_missing_values(stock_data)
 
     def _handle_missing_values(self, stock_data: pd.DataFrame) -> pd.DataFrame:
@@ -60,6 +62,7 @@ class MissingValueHandler:
             # Drop rows where NaNs still exist after forward filling
             stock_data = stock_data.dropna()
         
+        logger.info("Handling Missing Value Completed Successfully")
         return stock_data
 
 
