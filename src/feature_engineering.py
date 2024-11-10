@@ -61,7 +61,7 @@ class FeatureEngineer:
         """
         stock_data['Return'] = stock_data['Close'].pct_change()
         stock_data['Volatility'] = stock_data['Return'].rolling(window=5).std()
-        stock_data['Moving Average'] = stock_data['Close'].rolling(window=20).mean()
+        stock_data['Moving Average'] = stock_data['Close'].rolling(window=5).mean()
         logger.info("Feature Engineering completed successfully")
         return stock_data
     

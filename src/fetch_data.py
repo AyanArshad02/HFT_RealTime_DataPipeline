@@ -126,7 +126,7 @@ class StockDataFetcher:
 
         conn = psycopg2.connect(**DB_PARAMS)
         try:
-            query = "SELECT MAX(date) FROM processed_data WHERE symbol = %s"
+            query = "SELECT MAX(date) FROM processed_data WHERE ticker_symbol = %s"
             with conn.cursor() as cur:
                 cur.execute(query, (self.ticker_symbol,))
                 result = cur.fetchone()
