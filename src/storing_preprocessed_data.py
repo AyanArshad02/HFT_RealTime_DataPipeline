@@ -12,7 +12,33 @@ from feature_engineering import FeatureEngineer
 
 
 class DataStorer:
+    """
+    A class to handle storing processed stock data in a PostgreSQL database.
+
+    Methods:
+    --------
+    store(stock_data, ticker_symbol):
+        Stores stock data for a specified ticker symbol in the database.
+        Inserts data row-by-row, and handles conflicts by ignoring duplicates.
+    """
+
     def store(self, stock_data, ticker_symbol):
+        """
+        Stores processed stock data in the 'processed_data' table of the PostgreSQL database.
+
+        Parameters:
+        -----------
+        stock_data : DataFrame
+            A DataFrame containing processed stock data with columns 'Open', 'High', 'Low', 'Close', 'Volume',
+            'Moving Average', 'Volatility', and 'Return'.
+        ticker_symbol : str
+            The stock ticker symbol associated with the data.
+
+        Raises:
+        -------
+        Exception
+            If any error occurs during the data storage process, the transaction is rolled back, and an error is logged.
+        """
         conn = psycopg2.connect(**DB_PARAMS)
         try:
             with conn.cursor() as cur:
@@ -66,7 +92,7 @@ if __name__ == "__main__":
     # Instantiate the FeatureEngineer
     feature_engineering = FeatureEngineer()
 
-    # Feature engineering processed data and storing it in stock_data variable
+    # Feature engineer the processed data and store it in stock_data variable
     stock_data = feature_engineering.engineer(processed_data)
 
     # Instantiate DataStorer and store data with ticker symbol
