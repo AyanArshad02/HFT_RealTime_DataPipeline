@@ -3,6 +3,7 @@ from zenml.steps import step
 
 from src.ingest_data import DataIngestor
 
+@step
 def ingest_data_step(ticker_symbol: str) -> 'pd.DataFrame':
     """
     Ingests stock data for a given ticker symbol using the DataIngestor class.
@@ -16,7 +17,7 @@ def ingest_data_step(ticker_symbol: str) -> 'pd.DataFrame':
     Returns:
         pd.DataFrame: A pandas DataFrame containing the ingested stock data.
     """
-    
+
     ingestor = DataIngestor()
     stock_data = ingestor.ingest_data(ticker_symbol)
     return stock_data
