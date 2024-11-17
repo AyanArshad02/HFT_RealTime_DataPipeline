@@ -1,7 +1,9 @@
 import pandas as pd
+from zenml.steps import step
 
 from src.handle_missing_value import MissingValueHandler
 
+@step
 def handle_missing_value_step(stock_data) -> 'pd.DataFrame':
     """
     Handles missing values in the given stock data using the MissingValueHandler class.
