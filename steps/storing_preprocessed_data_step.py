@@ -1,10 +1,9 @@
 import pandas as pd
-from zenml.steps import step
-
+from zenml import step
 from src.storing_preprocessed_data import DataStorer
 
 @step
-def storing_preprocessed_data_step(stock_data, ticker_symbol) -> None:
+def storing_preprocessed_data_step(stock_data: pd.DataFrame, ticker_symbol: str) -> None:
     """
     Stores the preprocessed stock data for a given ticker symbol using the DataStorer class.
 
