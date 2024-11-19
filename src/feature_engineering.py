@@ -4,8 +4,8 @@ import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from utils.logger import logger
-from ingest_data import DataIngestor
-from handle_missing_value import MissingValueHandler
+from src.ingest_data import DataIngestor
+from src.handle_missing_value import MissingValueHandler
 
 """
 Here I am using template design pattern for Feature Engineering

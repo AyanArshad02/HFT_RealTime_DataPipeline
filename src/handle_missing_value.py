@@ -1,4 +1,4 @@
-from ingest_data import DataIngestor
+from src.ingest_data import DataIngestor
 import pandas as pd
 from utils.logger import logger
 

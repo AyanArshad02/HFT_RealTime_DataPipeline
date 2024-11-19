@@ -6,9 +6,9 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from utils.config import DB_PARAMS
 from utils.logger import logger
 
-from ingest_data import DataIngestor
-from handle_missing_value import MissingValueHandler
-from feature_engineering import FeatureEngineer
+from src.ingest_data import DataIngestor
+from src.handle_missing_value import MissingValueHandler
+from src.feature_engineering import FeatureEngineer
 
 
 class DataStorer:

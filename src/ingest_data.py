@@ -1,4 +1,4 @@
-from fetch_data import StockDataFetcher
+from src.fetch_data import StockDataFetcher
 import pandas as pd
 from utils.logger import logger
 
