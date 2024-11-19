@@ -21,3 +21,5 @@ def fetch_data_step(ticker_symbol: str) -> 'pd.DataFrame':
     fetcher = StockDataFetcher(ticker_symbol)
     stock_data = fetcher.fetch_data()
     return stock_data
+
+# fetch_data_step = step()(fetch_data_step)

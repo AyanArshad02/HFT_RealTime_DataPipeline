@@ -16,3 +16,5 @@ def handle_missing_value_step(stock_data) -> 'pd.DataFrame':
     """
     handler = MissingValueHandler()
     return handler.handle(stock_data)
+
+# handle_missing_value_step = step()(handle_missing_value_step)

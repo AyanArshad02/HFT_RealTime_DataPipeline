@@ -19,3 +19,5 @@ def feature_engineering_step(stock_data) -> 'pd.DataFrame':
     """
     engineer = FeatureEngineer()
     return engineer.engineer(stock_data)
+
+# feature_engineering_step = step()(feature_engineering_step)

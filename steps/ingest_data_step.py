@@ -21,3 +21,5 @@ def ingest_data_step(ticker_symbol: str) -> 'pd.DataFrame':
     ingestor = DataIngestor()
     stock_data = ingestor.ingest_data(ticker_symbol)
     return stock_data
+
+# ingest_data_step = step()(ingest_data_step)

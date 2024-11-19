@@ -17,3 +17,5 @@ def storing_preprocessed_data_step(stock_data, ticker_symbol) -> None:
     """
     storer = DataStorer()
     storer.store(stock_data, ticker_symbol)
+
+# storing_preprocessed_data_step = step()(storing_preprocessed_data_step)
