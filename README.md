@@ -22,36 +22,36 @@ A virtual environment (for managing dependencies)
 
 ### Installation:
 Clone the repository and install the necessary dependencies:
-'''
+```
 git clone https://github.com/your-username/HFT_RealTime_DataPipeline.git
 cd HFT_RealTime_DataPipeline
 pip install -r requirements.txt
-'''
+```
 
 ### Setting up the Virtual Environment:
 If you're using Conda, create a virtual environment:
-'''
+```
 conda create --name myenv python=3.8
 conda activate myenv
-'''
+```
 
 ### Database Setup:
 Configure PostgreSQL with the necessary parameters to store processed stock data. You can modify the database connection settings in utils/config.py.
 
 ## Running the Pipeline
 To run the pipeline manually:
-'''
+```
 python pipelines/run_pipeline.py
-'''
+```
 
 This will execute the entire data pipeline, from data ingestion to storing the processed data.
 
 ## Automating the Pipeline
 To automate the pipeline to run daily at 10 PM, use the provided setup_daily_pipeline.sh script. It will set up a cron job for you:
 
-'''
+```
 bash setup_daily_pipeline.sh
-'''
+```
 The cron job will run the pipeline every day at 10 PM, using the specified virtual environment. Logs will be stored in pipeline_cronjob.log.
 
 ## Folder Structure
