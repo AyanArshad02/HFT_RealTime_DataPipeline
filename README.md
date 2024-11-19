@@ -5,25 +5,25 @@ This project implements an MLOps framework utilizing ZenML for automating the re
 ## Overview
 The pipeline is composed of several steps:
 
-Fetch Data: Fetch stock data for a given ticker symbol.
-Ingest Data: Process the raw data and prepare it for further processing.
-Handle Missing Values: Identify and handle any missing values in the stock data.
-Feature Engineering: Generate new features based on the stock data.
-Store Processed Data: Store the processed data in a PostgreSQL database.
+1. Fetch Data: Fetch stock data for a given ticker symbol.
+2. Ingest Data: Process the raw data and prepare it for further processing.
+3. Handle Missing Values: Identify and handle any missing values in the stock data.
+4. Feature Engineering: Generate new features based on the stock data.
+5. Store Processed Data: Store the processed data in a PostgreSQL database.
 
 ## Setup
 
 ### Prerequisites:
 
-Python 3.x
-ZenML
-PostgreSQL (for storing processed data)
-A virtual environment (for managing dependencies)
+- Python 3.x
+- ZenML
+- PostgreSQL (for storing processed data)
+- A virtual environment (for managing dependencies)
 
 ### Installation:
 Clone the repository and install the necessary dependencies:
 ```
-git clone https://github.com/your-username/HFT_RealTime_DataPipeline.git
+git clone https://github.com/AyanArshad02/HFT_RealTime_DataPipeline.git
 cd HFT_RealTime_DataPipeline
 pip install -r requirements.txt
 ```
@@ -55,11 +55,11 @@ bash setup_daily_pipeline.sh
 The cron job will run the pipeline every day at 10 PM, using the specified virtual environment. Logs will be stored in pipeline_cronjob.log.
 
 ## Folder Structure
-src: Contains the core functionality, including data ingestion, feature engineering, and data storage.
-steps: Defines individual steps in the ZenML pipeline.
-pipelines: Contains the pipeline definition and logic for the data pipeline.
-setup.py: For packaging the project.
-setup_daily_pipeline.sh: A script to schedule the pipeline to run daily.
+1. src: Contains the core functionality, including data ingestion, feature engineering, and data storage.
+2. steps: Defines individual steps in the ZenML pipeline.
+3. pipelines: Contains the pipeline definition and logic for the data pipeline.
+4. setup.py: For packaging the project.
+5. setup_daily_pipeline.sh: A script to schedule the pipeline to run daily.
 
 
 ## ZenML Integration
