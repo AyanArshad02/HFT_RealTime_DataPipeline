@@ -64,6 +64,7 @@ The cron job will run the pipeline every day at 10 PM, using the specified virtu
 
 ## ZenML Integration
 ZenML is used to manage and orchestrate the steps of the pipeline. Each step is defined using the @step decorator, and the entire pipeline is orchestrated using the @pipeline decorator.
+![ZenMl Pipeline Structure](assets/ZenML_PipeLine.png)
 
 ## Conclusion
 This pipeline allows for automated, real-time processing of stock data, leveraging ZenML for MLOps workflow automation. You can easily extend the pipeline by adding more steps or integrating additional data sources.
