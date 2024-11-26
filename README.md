@@ -60,6 +60,7 @@ The cron job will run the pipeline every day at 10 PM, using the specified virtu
 3. pipelines: Contains the pipeline definition and logic for the data pipeline.
 4. setup.py: For packaging the project.
 5. setup_daily_pipeline.sh: A script to schedule the pipeline to run daily.
+6. tests : Unittest for testing each code in src folder.
 
 
 ## ZenML Integration
